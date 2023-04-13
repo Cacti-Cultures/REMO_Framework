@@ -1,9 +1,8 @@
 from fastapi import FastAPI
 import utils
-from pathlib import Path
 
 app = FastAPI()
-root_folder = Path("/workspaces/REMO_Framework")
+root_folder = 'C:/raven_private/REMO'
 
 @app.post("/add_message")
 async def add_message(message: str, speaker: str, timestamp: float):
@@ -33,4 +32,3 @@ async def maintain_tree():
     utils.maintain_tree(root_folder)
 
     return {"detail": "Tree maintenance completed"}
-
